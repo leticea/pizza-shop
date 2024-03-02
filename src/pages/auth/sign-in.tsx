@@ -13,9 +13,17 @@ const signInForm = z.object({
 type SignInForm = z.infer<typeof signInForm>;
 
 export function SignIn() {
-  const { register, handleSubmit } = useForm<SignInForm>();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<SignInForm>();
 
-  function handleSignIn(data: SignInForm) {}
+  async function handleSignIn(data: SignInForm) {
+    console.log(data);
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
 
   return (
     <>
@@ -37,7 +45,7 @@ export function SignIn() {
               <Input id="email" type="email" {...register("email")} />
             </div>
 
-            <Button className="w-full" type="submit">
+            <Button disabled={isSubmitting} className="w-full" type="submit">
               Acessar painel
             </Button>
           </form>
