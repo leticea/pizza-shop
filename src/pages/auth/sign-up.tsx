@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -18,6 +18,8 @@ const signUpForm = z.object({
 type SignUpForm = z.infer<typeof signUpForm>;
 
 export function SignUp() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -30,14 +32,14 @@ export function SignUp() {
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      // toast.success("Enviamos um link de autenticação para seu e-mail.", {
-      //   action: {
-      //     label: "Reenviar",
-      //     onClick: () => handleSignUp(data),
-      //   },
-      // });
+      toast.success("Restaurante cadastrado com sucesso!", {
+        action: {
+          label: "Login",
+          onClick: () => navigate("/sign-in"),
+        },
+      });
     } catch {
-      toast.error("Credenciais inválidas.");
+      toast.error("Erro ao cadastrar restaurante.");
     }
   }
 
