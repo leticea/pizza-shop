@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const signUpForm = z.object({
+  restaurantName: z.string(),
+  managerName: z.string(),
+  phone: z.string(),
   email: z.string().email(),
 });
 
@@ -23,6 +26,8 @@ export function SignUp() {
 
   async function handleSignUp(data: SignUpForm) {
     try {
+      console.log(data);
+
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       // toast.success("Enviamos um link de autenticação para seu e-mail.", {
@@ -56,8 +61,31 @@ export function SignUp() {
 
           <form onSubmit={handleSubmit(handleSignUp)} className="space-y-4">
             <div className="space-y-2">
+              <Label htmlFor="restaurantName">Nome do estabelecimento</Label>
+              <Input
+                id="restaurantName"
+                type="text"
+                {...register("restaurantName")}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="managerName">Seu nome</Label>
+              <Input
+                id="managerName"
+                type="text"
+                {...register("managerName")}
+              />
+            </div>
+
+            <div className="space-y-2">
               <Label htmlFor="email">Seu e-mail</Label>
               <Input id="email" type="email" {...register("email")} />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone">Seu telefone</Label>
+              <Input id="phone" type="tel" {...register("phone")} />
             </div>
 
             <Button disabled={isSubmitting} className="w-full" type="submit">
