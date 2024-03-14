@@ -28,14 +28,14 @@ export function Orders() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead></TableHead>
-                <TableHead>Identificador</TableHead>
-                <TableHead>Realizado há</TableHead>
-                <TableHead>Status</TableHead>
+                <TableHead className="w-[64px]"></TableHead>
+                <TableHead className="w-[150px]">Identificador</TableHead>
+                <TableHead className="w-[180px]">Realizado há</TableHead>
+                <TableHead className="w-[140px]">Status</TableHead>
                 <TableHead>Cliente</TableHead>
-                <TableHead>Total do pedido</TableHead>
-                <TableHead></TableHead>
-                <TableHead></TableHead>
+                <TableHead className="w-[140px]">Total do pedido</TableHead>
+                <TableHead className="w-[164px]"></TableHead>
+                <TableHead className="w-[132px]"></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
