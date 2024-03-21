@@ -6,15 +6,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import {
-  ResponsiveContainer,
-  LineChart,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Line,
-  Tooltip,
-} from "recharts";
+import { ResponsiveContainer, LineChart, XAxis, YAxis, Line } from "recharts";
+import colors from "tailwindcss/colors";
 
 const data = [
   { date: "10/12", revenue: 1200 },
@@ -40,6 +33,8 @@ export function RevenueChart() {
       <CardContent>
         <ResponsiveContainer width="100%" height={240}>
           <LineChart data={data} style={{ fontSize: 12 }}>
+            <XAxis dataKey="date" tickLine={false} axisLine={false} dy={16} />
+
             <YAxis
               stroke="#888"
               axisLine={false}
@@ -53,7 +48,12 @@ export function RevenueChart() {
               }
             />
 
-            <Line type="linear" strokeWidth={2} dataKey="revenue" />
+            <Line
+              type="linear"
+              strokeWidth={2}
+              dataKey="revenue"
+              stroke={colors["violet"]["500"]}
+            />
           </LineChart>
         </ResponsiveContainer>
       </CardContent>
