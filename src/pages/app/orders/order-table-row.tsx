@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { TableRow, TableCell } from "@/components/ui/table";
 import { Search, ArrowRight, X } from "lucide-react";
+import { OrderDetails } from "./order-details";
 
 export function OrderTableRow() {
   return (
@@ -15,7 +16,7 @@ export function OrderTableRow() {
             </Button>
           </DialogTrigger>
 
-          <DialogContent>Teste</DialogContent>
+          <OrderDetails />
         </Dialog>
       </TableCell>
       <TableCell className="font-mono text-xs font-medium">
