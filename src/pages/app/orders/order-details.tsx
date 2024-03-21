@@ -4,7 +4,15 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export function OrderDetails() {
   return (
@@ -57,6 +65,39 @@ export function OrderDetails() {
               <TableCell className="flex justify-end">há 4 minutos</TableCell>
             </TableRow>
           </TableBody>
+        </Table>
+
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Produto</TableHead>
+              <TableHead className="text-right">Qtd.</TableHead>
+              <TableHead className="text-right">Preço</TableHead>
+              <TableHead className="text-right">Subtotal</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>Pizza Margherita Família</TableCell>
+              <TableCell className="text-right">2</TableCell>
+              <TableCell className="text-right">R$ 49,90</TableCell>
+              <TableCell className="text-right">R$ 99,80</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Pizza Vegetariana Família</TableCell>
+              <TableCell className="text-right">2</TableCell>
+              <TableCell className="text-right">R$ 59,90</TableCell>
+              <TableCell className="text-right">R$ 119,80</TableCell>
+            </TableRow>
+          </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableCell colSpan={3}>Total do pedido</TableCell>
+              <TableCell className="text-right font-medium">
+                R$ 219,60
+              </TableCell>
+            </TableRow>
+          </TableFooter>
         </Table>
       </div>
     </DialogContent>
