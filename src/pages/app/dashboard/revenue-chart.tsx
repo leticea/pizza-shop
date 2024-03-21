@@ -40,6 +40,19 @@ export function RevenueChart() {
       <CardContent>
         <ResponsiveContainer width="100%" height={240}>
           <LineChart data={data} style={{ fontSize: 12 }}>
+            <YAxis
+              stroke="#888"
+              axisLine={false}
+              tickLine={false}
+              width={80}
+              tickFormatter={(value: number) =>
+                value.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })
+              }
+            />
+
             <Line type="linear" strokeWidth={2} dataKey="revenue" />
           </LineChart>
         </ResponsiveContainer>
