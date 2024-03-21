@@ -26,7 +26,16 @@ export function PopularProductsChart() {
       <CardContent>
         <ResponsiveContainer width="100%" height={240}>
           <PieChart style={{ fontSize: 12 }}>
-            <Pie data={data} dataKey="amount" nameKey="product" />
+            <Pie
+              data={data}
+              dataKey="amount"
+              nameKey="product"
+              cx="50%"
+              cy="50%"
+              outerRadius={86}
+              innerRadius={64}
+              strokeWidth={8}
+            />
           </PieChart>
         </ResponsiveContainer>
       </CardContent>
