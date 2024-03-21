@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart } from "lucide-react";
 
-import { ResponsiveContainer, PieChart, Pie } from "recharts";
+import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import colors from "tailwindcss/colors";
 
 const data = [
@@ -10,6 +10,14 @@ const data = [
   { product: "Portuguesa", amount: 50 },
   { product: "Calabresa", amount: 32 },
   { product: "Palmito", amount: 21 },
+];
+
+const COLORS = [
+  colors.sky[500],
+  colors.amber[500],
+  colors.violet[500],
+  colors.emerald[500],
+  colors.rose[500],
 ];
 
 export function PopularProductsChart() {
@@ -35,7 +43,17 @@ export function PopularProductsChart() {
               outerRadius={86}
               innerRadius={64}
               strokeWidth={8}
-            />
+            >
+              {data.map((_, index) => {
+                return (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index]}
+                    className="stroke-background hover:opacity-80"
+                  />
+                );
+              })}
+            </Pie>
           </PieChart>
         </ResponsiveContainer>
       </CardContent>
