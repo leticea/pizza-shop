@@ -18,6 +18,7 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { updateProfile } from "@/api/update-profile";
 import { toast } from "sonner";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 const storeProfileSchema = z.object({
   name: z.string().min(1),
@@ -92,9 +93,11 @@ export function StoreProfileDialog() {
         </div>
 
         <DialogFooter>
-          <Button type="button" variant="ghost">
-            Cancelar
-          </Button>
+          <DialogClose asChild>
+            <Button type="button" variant="ghost">
+              Cancelar
+            </Button>
+          </DialogClose>
           <Button type="submit" variant="success" disabled={isSubmitting}>
             Salvar
           </Button>
