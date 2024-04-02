@@ -27,6 +27,14 @@ export function Orders() {
     queryFn: () => getOrders({ pageIndex }),
   });
 
+  function handlePaginate(pageIndex: number) {
+    setSearchParams((prev) => {
+      prev.set("page", (pageIndex + 1).toString());
+
+      return prev;
+    });
+  }
+
   return (
     <>
       <Helmet title="Pedidos" />
@@ -61,6 +69,7 @@ export function Orders() {
 
           {result && (
             <Pagination
+              onPageChange={handlePaginate}
               pageIndex={result.meta.pageIndex}
               totalCount={result.meta.totalCount}
               perPage={result.meta.perPage}
