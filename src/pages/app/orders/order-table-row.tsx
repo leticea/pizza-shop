@@ -4,7 +4,17 @@ import { TableRow, TableCell } from "@/components/ui/table";
 import { Search, ArrowRight, X } from "lucide-react";
 import { OrderDetails } from "./order-details";
 
-export function OrderTableRow() {
+export interface OrderTableRowProps {
+  order: {
+    orderId: string;
+    createdAt: Date;
+    status: "pending" | "canceled" | "processing" | "delivering" | "delivered";
+    customerName: string;
+    total: number;
+  };
+}
+
+export function OrderTableRow({ order }: OrderTableRowProps) {
   return (
     <TableRow>
       <TableCell>
