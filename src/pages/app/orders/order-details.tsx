@@ -18,12 +18,14 @@ import { useQuery } from "@tanstack/react-query";
 
 export interface OrderDetailsProps {
   orderId: string;
+  open: boolean;
 }
 
-export function OrderDetails({ orderId }: OrderDetailsProps) {
+export function OrderDetails({ orderId, open }: OrderDetailsProps) {
   const { data: order } = useQuery({
     queryKey: ["order", orderId],
     queryFn: () => getOrderDetails({ orderId }),
+    enabled: open,
   });
 
   return (
