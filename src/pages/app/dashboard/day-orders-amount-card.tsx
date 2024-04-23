@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Currency, Utensils } from "lucide-react";
+import { Utensils } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { getDayOrdersAmount } from "@/api/get-day-orders-amount";
 
