@@ -6,14 +6,6 @@ import { BarChart } from "lucide-react";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import colors from "tailwindcss/colors";
 
-const data = [
-  { product: "Marguerita", amount: 40 },
-  { product: "Vegetariana", amount: 18 },
-  { product: "Portuguesa", amount: 50 },
-  { product: "Calabresa", amount: 32 },
-  { product: "Palmito", amount: 21 },
-];
-
 const COLORS = [
   colors.sky[500],
   colors.amber[500],
