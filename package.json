@@ -43,6 +43,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.4",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
@@ -55,6 +56,7 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
+    "user-event": "link:@testing/library/user-event",
     "vite": "^5.1.4",
     "vitest": "^1.5.1"
   }
