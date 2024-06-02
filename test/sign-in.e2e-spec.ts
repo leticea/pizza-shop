@@ -11,7 +11,23 @@ test("sign in successfully", async ({ page }) => {
   );
 
   expect(toast).toBeVisible();
+});
 
-  // hack para visualizar a última parte do teste, nesse caso, o toast
-  await page.waitForTimeout(2000);
+test("sign in with wrong credentials", async ({ page }) => {
+  await page.goto("/sign-in", { waitUntil: "networkidle" });
+
+  await page.getByLabel("Seu e-mail").fill("wrong@example.com");
+  await page.getByRole("button", { name: "Acessar painel" }).click();
+
+  const toast = page.getByText("Credenciais inválidas.");
+
+  expect(toast).toBeVisible();
+});
+
+test("navigate to new restaurant page", async ({ page }) => {
+  await page.goto("/sign-in", { waitUntil: "networkidle" });
+
+  await page.getByRole("link", { name: "Novo estabelecimento" }).click();
+
+  expect(page.url()).toContain("/sign-up");
 });
