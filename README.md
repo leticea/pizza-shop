@@ -10,7 +10,31 @@
 # 🍕 pizza.shop WEB
 
 <p align="center">
-  <img alt="" src=".github/wallpaper.png">
+  <img alt="" src=".github/light.png">
+</p>
+
+<p align="center">
+  <img alt="" src=".github/image.png">
+</p>
+
+<p align="center">
+  <img alt="" src=".github/image2.png">
+</p>
+
+<p align="center">
+  <img alt="" src=".github/image3.png">
+</p>
+
+<p align="center">
+  <img alt="" src=".github/image4.png">
+</p>
+
+<p align="center">
+  <img alt="" src=".github/image5.png">
+</p>
+
+<p align="center">
+  <img alt="" src=".github/image6.png">
 </p>
 
 ## 🚀 Tecnologias
