@@ -48,13 +48,17 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Tailwindcss](https://tailwindcss.com/) - ^3.4.1
 - [Tailwind-merge](https://github.com/dcastil/tailwind-merge) - ^2.2.1
 - [Shadcn/ui](https://ui.shadcn.com/)
+- [Axios](https://axios-http.com/ptbr/docs/intro) - ^1.6.8
 - [React-hook-form](https://react-hook-form.com/) - ^7.51.0
 - [React-router-dom](https://reactrouter.com/en/main) - ^6.22.2
 - [React Query](https://tanstack.com/query/v3/) - ^5.28.6
-- [Lucide React](https://lucide.dev/guide/packages/lucide-react) - ^0.344.0
+- [Playwright](https://playwright.dev/) - ^1.44.1
 - [Zod](https://zod.dev/) - ^3.22.4
-- [Sonner](https://sonner.emilkowal.ski/) - ^1.4.3
+- [MSW](https://mswjs.io/) - ^2.2.14
+- [Happy Dom](https://github.com/capricorn86/happy-dom) - ^14.7.1
+- [Lucide React](https://lucide.dev/guide/packages/lucide-react) - ^0.344.0
 - [Recharts](https://recharts.org/en-US/) - ^2.12.3
+- [Sonner](https://sonner.emilkowal.ski/) - ^1.4.3
 
 ## 💻 Projeto
 
@@ -64,24 +68,14 @@ Front-end do aplicativo de entrega de comida (aka. iFood/Uber Eats) desenvolvido
 
 - [Back-end - API](https://github.com/leticea/pizza-shop-api)
 
-<p align="center">
-  <img alt="" src=".github/image.png">
-</p>
-
-<p align="center">
-  <img alt="" src=".github/image2.png">
-</p>
-
-<p align="center">
-  <img alt="" src=".github/image3.png">
-</p>
-
 ## ⚙️ Como Rodar
 
 - Clone o projeto.
 - Clone o projeto da API para rodar o projeto junto.
 - Entre na pasta do projeto e rode 'pnpm install' (use 'npm install' ou 'yarn install' se for essa a sua configuração).
 - pnpm run dev para rodar o projeto na porta indicada.
+- pnpm dev:test para rodar os mocks.
+- pnpm playwright test --ui para visualizar o teste na interface do playwright.
 
 ## 🤔 Como contribuir
 
